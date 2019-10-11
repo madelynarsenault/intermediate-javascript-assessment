@@ -43,25 +43,26 @@ function noWeakLink() {
     method: 'GET',
     url: '/api/users'
   })
-  // CODE HERE...
-
 }
-
-
-
-// *************
-// * PROBLEM 2 *
-// *************
-
-// Below is a variable called elephant which has been assigned an
-// object with a name.
-
-// Function large currently returns the following:
-// 'My name is ' + this.name + ' and I am very heavy!'
-
+  // CODE HERE...
+  
+  
+  
+  
+  // *************
+  // * PROBLEM 2 *
+  // *************
+  
+  // Below is a variable called elephant which has been assigned an
+  // object with a name.
+  
+  // Function large currently returns the following:
+  // 'My name is ' + this.name + ' and I am very heavy!'
+  
 // You must use explicit binding.
 // In a variable called boundToElephant,
 // assign it the value of the large function BOUND to the elephant object.
+
 
 // When boundToElephant gets called, it should return this exact string:
 // 'My name is Horton and I am very heavy!' (The above instructions should make this work.  No code needed for this paragraph)
@@ -70,10 +71,12 @@ var elephant = {
   name: 'Horton'
 }
 function large() {
-
+  
   return 'My name is ' + this.name + ' and I am very heavy!'
 }
 // CODE HERE...
+var boundToElephant = large.bind(elephant)
+boundToElephant()
 
 
 
@@ -89,6 +92,14 @@ function large() {
 
 // CODE HERE...
 
+function deathStar(capacity, crew){
+  function capacity(){
+  }
+  var crew = {}
+ var newBind = capacity.bind(crew)
+}
+newBind()
+
 
 
 // *************
@@ -103,7 +114,11 @@ function large() {
 // The closure function will return the combined value of assets and liabilities.
 
 // CODE HERE...
-
+function accountingOffice(assets){
+  return function (liabilities){
+    return  assets + liabilities 
+  }
+}
 
 
 // *************
@@ -128,6 +143,14 @@ function large() {
 // };
 
 // CODE HERE...
+function forgetter(name){
+  return function rememberall (item){
+    return { 
+      name: "mads", 
+      remember:[]
+    }
+  }
+}
 
 
 
@@ -156,3 +179,22 @@ function large() {
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+
+function frodo(startingHungerValue, startingDangerValue){
+  var startingHungerValue = 30;
+  var startingDangerValue = 30;
+  return {
+    dinnerOverFire (){
+      return {hunger: (-25),
+        danger: (40)
+      }
+    },
+    hidingInBush (){
+      return{
+        hunger:(35),
+        danger: (-20)
+      }
+    }
+
+  }
+}
